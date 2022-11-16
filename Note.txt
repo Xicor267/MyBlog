@@ -1,0 +1,83 @@
+* Navbar.js
+login  loguot
+Toolbar className={classes.toolbar}
+        {user.result  (
+          div className={classes.profile}
+            Avatar className={classes.purple} alt={user.result.name} src={user.result.imageUrl}{user.result.name.charAt(0)}Avatar
+            Typography className={classes.userName} variant=h6{user.result.name}Typography
+            Button variant=contained className={classes.logout} color=primary onClick={logout}LogoutButton
+          div
+        )  (
+          Button component={Link} to=auth variant=contained color=textPrimary Sign InButton
+        )}
+Toolbar
+
+* Search Tag:
+            <AppBar className={classes.appBarSearch} position="static" color="inherit">
+              <TextField onKeyDown={handleKeyPress} name="search" variant="outlined" label="Search Blog" fullWidth value={search} onChange={(e) => setSearch(e.target.value)} />
+              <ChipInput
+                style={{ margin: '10px 0' }}
+                value={tags}
+                onAdd={(chip) => handleAddChip(chip)}
+                onDelete={(chip) => handleDeleteChip(chip)}
+                label="Search Tags"
+                variant="outlined"
+              />
+
+              <Button onClick={searchPost} className={classes.searchButton} variant="contained" color="primary">Search</Button>
+            </AppBar>
+
+
+* Form.js
+  if (!user?.result?.name) {
+    return (
+      <Paper className={classes.paper} elevation={6}>
+        <Typography variant="h6" align="center">
+          Please Sign In use service !!!
+        </Typography>
+      </Paper>
+    );
+  }
+
+* Auth.js
+	  // const googleSuccess = async (res) => {
+  //   const result = res?.profileObj;
+  //   const token = res?.tokenId;
+
+  //   try {
+  //     dispatch({ type: AUTH, data: { result, token } });
+
+  //     history.push('/');
+  //   } catch (error) {
+  //     console.log(error);
+  //   }
+  // };
+
+  // const googleError = () => console.log('Google Sign In was unsuccessful. Try again later');
+
+
+
+        <Avatar className={classes.avatar}>
+          <CodeIcon />
+        </Avatar>
+
+          <GoogleLogin
+            clientId="564033717568-bu2nr1l9h31bhk9bff4pqbenvvoju3oq.apps.googleusercontent.com"
+            render={(renderProps) => (
+              <Button className={classes.googleButton} color="primary" fullWidth onClick={renderProps.onClick} disabled={renderProps.disabled} startIcon={<Icon />} variant="contained">
+                Google Sign In
+              </Button>
+            )}
+            onSuccess={googleSuccess}
+            onFailure={googleError}
+            cookiePolicy="single_host_origin"
+          />
+
+
+
+
+<div className={classes.iframeApp}>
+          <iframe src="https://chromedino.com/mario/" frameborder="0" scrolling="no" width="100%" height="100%" loading="lazy"></iframe>
+        </div>
+
+
